@@ -1,6 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Create 404 page
-run: cp ./dist/index.html ./dist/404.html
+name: Deploy static content to Pages
 
 
 on:
