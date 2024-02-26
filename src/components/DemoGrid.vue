@@ -1,18 +1,22 @@
-<script setup>
-import { ref, computed } from 'vue'
+<script setup lang="ts">
+import { ref, computed, defineProps } from 'vue';
 
-const props = defineProps({
-  data: Array,
-  columns: Array,
-  filterKey: String
-})
+interface DataEntry {
+  [key: string]: string | number;
+}
 
-const sortKey = ref('')
-const sortOrders = ref(
-  props.columns.reduce((o, key) => ((o[key] = 1), o), {})
-)
+const props = defineProps<{
+  data: DataEntry[];
+  columns: string[];
+  filterKey: string;
+}>()
 
-const filteredData = computed(() => {
+const sortKey = ref<string>('');
+const sortOrders = ref<{ [key: string]: number }>(
+  props.columns.reduce((o: { [key: string]: number }, key) => ((o[key] = 1), o), {})
+);
+
+const filteredData = computed<DataEntry[]>(() => {
   let { data, filterKey } = props
   if (filterKey) {
     filterKey = filterKey.toLowerCase()
@@ -26,20 +30,21 @@ const filteredData = computed(() => {
   if (key) {
     const order = sortOrders.value[key]
     data = data.slice().sort((a, b) => {
-      a = a[key]
-      b = b[key]
-      return (a === b ? 0 : a > b ? 1 : -1) * order
+      const aValue = a[key] as string | number;
+      const bValue = b[key] as string | number;
+      return (aValue === bValue ? 0 : aValue > bValue ? 1 : -1) * order;
     })
   }
   return data
 })
 
-function sortBy(key) {
+
+function sortBy(key: string) {
   sortKey.value = key
   sortOrders.value[key] *= -1
 }
 
-function capitalize(str) {
+function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 </script>
@@ -49,8 +54,9 @@ function capitalize(str) {
     <thead>
       <tr>
         <th v-for="key in columns"
+          :key="key"
           @click="sortBy(key)"
-          :class="{ active: sortKey == key }">
+          :class="{ active: sortKey === key }">
           {{ capitalize(key) }}
           <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
           </span>
@@ -58,9 +64,9 @@ function capitalize(str) {
       </tr>
     </thead>
     <tbody>
-      <tr v-for="entry in filteredData">
-        <td v-for="key in columns">
-          {{entry[key]}}
+      <tr v-for="(entry, index) in filteredData" :key="index">
+        <td v-for="(value, key) in entry" :key="key">
+          {{ value }}
         </td>
       </tr>
     </tbody>

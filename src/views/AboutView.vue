@@ -54,13 +54,17 @@
   </div>
 </template>
 
-<script setup>
-import DemoGrid from '../components/Grid.vue'
-import { ref } from 'vue'
+<script setup lang="ts">
+import DemoGrid from '../components/DemoGrid.vue'
+import { ref, type Ref } from 'vue'
 
-const searchQuery = ref('')
-const WholeGrains = ['Whole Grains']
-const gridData = [
+interface FoodItem {
+  [key:string]:string;
+}
+const searchQuery: Ref<string> = ref('');
+const WholeGrains: string[] = ['Whole Grains'];
+
+const gridData: FoodItem[] = [
   { 'Whole Grains': 'Wheat' },
   { 'Whole Grains': 'Wholegrain rice' },
   { 'Whole Grains': 'Quinoa' },
@@ -70,7 +74,7 @@ const gridData = [
   { 'Whole Grains': 'Wholegrain bread' }
 ]
 
-const Vegetables = [
+const Vegetables: FoodItem[] = [
   { Vegetables: 'Tomatoes' },
   { Vegetables: 'Cucumber' },
   { Vegetables: 'Zucchini' },
@@ -93,7 +97,7 @@ const Vegetables = [
   { Vegetables: 'Mushrooms' },
 ]
 
-const Fruits = [
+const Fruits: FoodItem[] = [
   { fruits: 'Apples' },
   { fruits: 'Oranges' },
   { fruits: 'Grapefruit' },
@@ -112,7 +116,7 @@ const Fruits = [
   { fruits: 'Cherries' },
 ]
 
-const NutsSeedsHealthyFats = [
+const NutsSeedsHealthyFats: FoodItem[] = [
   { 'Nuts Seeds Fats': 'Almonds' },
   { 'Nuts Seeds Fats': 'Hazelnuts' },
   { 'Nuts Seeds Fats': 'Peanuts' },
@@ -128,7 +132,7 @@ const NutsSeedsHealthyFats = [
   { 'Nuts Seeds Fats': 'nut butters' },
 ]
 
-const LeanMeatsFishEggs = [
+const LeanMeatsFishEggs: FoodItem[] = [
   {'Lean Meats Fish Eggs': 'Chicken' },
   {'Lean Meats Fish Eggs': 'Turkey' },
   {'Lean Meats Fish Eggs': 'Pork' },
@@ -141,7 +145,7 @@ const LeanMeatsFishEggs = [
   {'Lean Meats Fish Eggs': 'Eggs' },
 ]
 
-const BeansAndLegumes = [
+const BeansAndLegumes: FoodItem[] = [
   {'Beans And Legumes': 'Black Beans'},
   {'Beans And Legumes': 'White Beans'},
   {'Beans And Legumes': 'Kidney Beans'},
@@ -150,7 +154,7 @@ const BeansAndLegumes = [
   {'Beans And Legumes': 'Split Peas'},
 ]
 
-const Dairy = [
+const Dairy: FoodItem[] = [
   {dairy: 'Milk'},
   {dairy: 'Yogurt'},
   {dairy: 'Greek Yogurt'},
