@@ -3,6 +3,8 @@ import WelcomeItem from './WelcomeItem.vue'
 import ShoppingIcon from './icons/IconShopping.vue'
 import ShoppingList from './ShoppingList.vue'
 import SendEmail from './SendEmail.vue';
+import Recepies from './RecepiesChat.vue'
+
 </script>
 
 <template>
@@ -18,4 +20,5 @@ import SendEmail from './SendEmail.vue';
   </WelcomeItem>
   <div>Press this button only when you are happt to your shopping list.</div>
   <SendEmail />
+  <Recepies/>
 </template>
