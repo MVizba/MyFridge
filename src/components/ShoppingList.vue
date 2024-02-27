@@ -5,7 +5,6 @@
         <ul>
           <li v-for="(list, index) in lists" :key="index">
             {{ list }}
-            <!-- Use an image tag to display the SVG icon -->
             <img src="./icons/delete.svg" alt="Delete" @click="removeList(index)" />
           </li>
         </ul>

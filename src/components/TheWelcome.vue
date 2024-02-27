@@ -2,6 +2,7 @@
 import WelcomeItem from './WelcomeItem.vue'
 import ShoppingIcon from './icons/IconShopping.vue'
 import ShoppingList from './ShoppingList.vue'
+import SendEmail from './SendEmail.vue';
 </script>
 
 <template>
@@ -15,4 +16,6 @@ import ShoppingList from './ShoppingList.vue'
     to your grocery bag.
     <ShoppingList />
   </WelcomeItem>
+  <div>Press this button only when you are happt to your shopping list.</div>
+  <SendEmail />
 </template>
