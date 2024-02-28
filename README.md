@@ -1,71 +1,51 @@
 # myfridge
 
-This template should help get you started developing with Vue 3 in Vite.
+- Shopping List Application
 
-## Recommended IDE Setup
+  This application allows users to manage their shopping lists, send shopping lists via email, and get recipes based on the products in their lists, Helps to add healthy food to the shopping list by sellecting it from the list.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+* ShpoppingList
 
-## Type Support for `.vue` Imports in TS
+  The ShoppingList component displays the user's shopping lists and allows them to add or remove items.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+* SendEmail
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+  The SendEmail component provides a button to send the current shopping list via email.
+  /_MVP. (possible to send email only to myself, it's for further implementation, would like to make it possible to send it to the user.)_/
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+* RecipesChat
 
-## Customize configuration
+  The RecipesChat component allows users to retrieve recipes based on the products in their shopping lists.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+* HealthyFood
+
+  The HealthyFood component displays a list of healthy food products and allows users to add them to their shopping list.
+
+# How to Run
+
+Clone the repository.
+Navigate to the project directory.
+Install dependencies using npm install.
+Run the application using npm run dev.
+
+- Additional Notes
+  Make sure you have Node.js installed on your system.
+  This project utilizes Vue.js, so familiarity with Vue.js development is recommended.
 
 ## Project Setup
 
-```sh
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
+Type-Check, Compile and Minify for Production
 
-```sh
 npm run build
-```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
 npm run test:unit
-```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
 npx playwright install
 
-# When testing on CI, must build the project first
 npm run build
 
-# Runs the end-to-end tests
 npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
