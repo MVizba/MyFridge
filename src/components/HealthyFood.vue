@@ -14,7 +14,7 @@
           <td>{{ product.type }}</td>
           <td>{{ product.name }}</td>
           <td>
-            <button @click="handleButtonClick(product)" class="btn btn-primary btn-sm">Add</button>
+            <img width="20" height="20" @click="handleButtonClick(product)" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/add--v1.png" alt="add" style="cursor: pointer;" />
           </td>
         </tr>
       </tbody>

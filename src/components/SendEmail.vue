@@ -1,5 +1,5 @@
 <template>
-    <button @click="sendEmail(products)" class="btn btn-primary btn-sm">Get my Shopping list</button>
+    <button @click="sendEmail(products)" class="btn btn-custom btn-sm">Send me a shopping list</button>
   </template>
 
 <script lang="ts">
@@ -45,4 +45,16 @@ sendEmail(products: string | null) {
 </script>
 
   <style scoped>
+  .btn-custom {
+  background-color: #398a4c86;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.btn-custom:hover {
+  background-color: #388e3c;
+}
   </style>

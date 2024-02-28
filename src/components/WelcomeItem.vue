@@ -1,8 +1,5 @@
 <template>
   <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
     <div class="details">
       <h3>
         <slot name="heading"></slot>
@@ -10,18 +7,26 @@
       <slot></slot>
     </div>
   </div>
+  <div class="centered-text">You can send me your shopping list or get random recepies from your products</div>
 </template>
 
 <style scoped>
 .item {
   margin-top: 2rem;
   display: flex;
-  position: relative;
+  justify-content: center;
+  text-align: center;
 }
 
 .details {
   flex: 1;
   margin-left: 1rem;
+  max-width: 600px;
+}
+
+.centered-text {
+  margin-top: 1rem;
+  text-align: center;
 }
 
 i {
@@ -39,6 +44,7 @@ h3 {
   font-weight: 500;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
+  text-align: center;
 }
 
 @media (min-width: 1024px) {

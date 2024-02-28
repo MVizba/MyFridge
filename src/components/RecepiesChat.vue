@@ -1,5 +1,5 @@
 <template>
-  <button @click="getRecipes()" class="btn btn-primary btn-sm">Get Recipes</button>
+  <button @click="getRecipes()" class="btn btn-custom btn-sm">Get Recipes</button>
   <div class="response-container" v-if="response">
       <div class="response-item" v-for="(recipe, index) in response" :key="index">
         <h3>{{ recipe.title }}</h3>
@@ -63,5 +63,19 @@ methods: {
   margin: 10px;
   padding: 10px;
   border: 1px solid #ccc;
+}
+
+
+.btn-custom {
+  background-color: #398a4c86;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.btn-custom:hover {
+  background-color: #388e3c;
 }
 </style>
