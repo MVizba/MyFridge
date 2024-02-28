@@ -1,13 +1,25 @@
+<script setup lang="ts">
+import ShoppingList from './ShoppingList.vue'
+import SendEmail from './SendEmail.vue';
+import Recepies from './RecepiesChat.vue';
+</script>
+
 <template>
   <div class="item">
     <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <slot></slot>
+      <h3>Welcome to "My Fridge"</h3>
+      <h4>
+        To add a product, simply press "Enter". To remove, press the "Trash bin" icon. <br>
+        To add <router-link to="/healthyFood">healthy food</router-link>, choose it from the list and press the "+" icon.
+        To generate recepies press "Get recepies",
+        To send me your shopping list, press "Send me a Shopping list"
+      </h4>
+      <ShoppingList />
+      <div class="centered-text">You can send me your shopping list or get random recipes from your products</div>
     </div>
   </div>
-  <div class="centered-text">You can send me your shopping list or get random recepies from your products</div>
+  <SendEmail />
+  <Recepies />
 </template>
 
 <style scoped>
@@ -29,16 +41,6 @@
   text-align: center;
 }
 
-i {
-  display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-
-  color: var(--color-text);
-}
-
 h3 {
   font-size: 1.2rem;
   font-weight: 500;
@@ -51,17 +53,6 @@ h3 {
   .item {
     margin-top: 0;
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
-  }
-
-  i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    width: 50px;
-    height: 50px;
   }
 
   .item:before {

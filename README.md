@@ -1,3 +1,13 @@
+Link: https://mvizba.github.io/MyFridge/
+
+# To fully test functionality, you need to get your API-KEYS.
+
+Before you start using it:
+
+in .env file you need to add your openAI - API-KEY (https://platform.openai.com/playground)
+
+in SendEmail.vue file you need to add your SERVICE-ID, TEMPLATE-ID, PERSONAL-KEY Create your account at emailjs (https://dashboard.emailjs.com/sign-up)
+
 # myfridge
 
 - Shopping List Application

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderView from './components/HeaderView.vue'
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Shopping logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="Make Shopping great again!" />
+      <HeaderView msg="Make Shopping great again!" />
 
       <nav>
         <RouterLink to="/">Shopping List</RouterLink>

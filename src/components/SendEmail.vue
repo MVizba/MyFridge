@@ -29,8 +29,8 @@ sendEmail(products: string | null) {
 
 
       emailjs
-        .send('service_dv6nmor', 'template_hcoyu0o', templateParams, {
-          publicKey: '8v1q8dNG7qmy4iByC',
+        .send('SERVICE-ID', 'TEMPLATE-ID', templateParams, {
+          publicKey: 'KEY',
         })
         .then(
           () => {
