@@ -1,5 +1,7 @@
 <template>
-  <button @click="getRecipes()" class="btn btn-custom btn-sm">Get Recipes</button>
+  <div class="button-container">
+    <button @click="getRecipes()" class="btn btn-custom btn-sm">Get Recipes</button>
+  </div>
   <div class="response-container" v-if="response">
       <div class="response-item" v-for="(recipe, index) in response" :key="index">
         <h3>{{ recipe.title }}</h3>
@@ -65,6 +67,15 @@ methods: {
   border: 1px solid #ccc;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.response-container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .btn-custom {
   background-color: #398a4c86;

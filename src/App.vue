@@ -11,7 +11,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="Make Shopping great again!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">Shopping List</RouterLink>
         <RouterLink to="/about">Healthy food</RouterLink>
       </nav>
     </div>

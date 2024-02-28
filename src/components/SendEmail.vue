@@ -1,6 +1,8 @@
 <template>
+  <div class="button-container">
     <button @click="sendEmail(products)" class="btn btn-custom btn-sm">Send me a shopping list</button>
-  </template>
+  </div>
+</template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -52,6 +54,12 @@ sendEmail(products: string | null) {
   padding: 6px 12px;
   cursor: pointer;
   border-radius: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 .btn-custom:hover {
