@@ -10,7 +10,7 @@ import Recepies from './RecepiesChat.vue'
   <WelcomeItem>
     <template #heading>Welcome to "My Fridge"</template>
     <h4>To add product - simple press "Enter", to remove - press "Trash bin" icon.<br>
-      To add <router-link to="/about">healthy food</router-link> choose it from a list and press "+" icon.<br>
+      To add <router-link to="/healthyFood">healthy food</router-link> choose it from a list and press "+" icon.<br>
     To generate a recepies - press "Get Recipes"<br>
   To send me your skopping list - press "Send me a shopping list".</h4>
     <ShoppingList />
