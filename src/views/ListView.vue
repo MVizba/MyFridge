@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HealthyFood from '../components/HealthyFood.vue'
+import HealthyFood from '../components/ListLogic/HealthyFood.vue'
 </script>
 
 <template>

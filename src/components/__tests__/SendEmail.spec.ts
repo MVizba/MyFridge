@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import SendEmail from '@/components/SendEmail.vue';
+import SendEmail from '@/components/ShoppingLogic/SendEmail.vue';
 
 describe('SendEmail', () => {
   it('initializes with correct data', () => {

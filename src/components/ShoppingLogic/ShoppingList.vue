@@ -5,7 +5,7 @@
         <ul>
           <li v-for="(list, index) in lists" :key="index">
             {{ list }}
-            <img src="./icons/delete.svg" alt="Delete" @click="removeList(index)" />
+            <img src="../icons/delete.svg" alt="Delete" @click="removeList(index)" />
           </li>
         </ul>
       </div>

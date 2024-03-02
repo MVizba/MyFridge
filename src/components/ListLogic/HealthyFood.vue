@@ -1,6 +1,7 @@
 <template>
   <div>
     <input type="text" v-model="searchQuery" placeholder="Search product..." class="form-control mb-3" />
+    <div style="margin-bottom: 20px;"></div>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -14,7 +15,7 @@
           <td>{{ product.type }}</td>
           <td>{{ product.name }}</td>
           <td>
-            <img width="20" height="20" @click="handleButtonClick(product)" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/add--v1.png" alt="add" style="cursor: pointer;" />
+            <img width="20" height="20" :src="getButtonImage(product)" alt="add" @click="handleButtonClick(product, index)" style="cursor: pointer;" />
           </td>
         </tr>
       </tbody>
@@ -104,7 +105,8 @@ export default defineComponent({
         { type: 'Dairy', name: 'Yogurt' },
         { type: 'Dairy', name: 'Greek Yogurt' },
         { type: 'Dairy', name: 'Unprocessed Cheese' },
-      ],
+        ],
+      addedIndices: [] as number[]
     };
   },
   computed: {
@@ -116,13 +118,37 @@ export default defineComponent({
     },
   },
   methods: {
-    handleButtonClick(product: { type: string; name: string }) {
-      const currentLists = localStorage.getItem('shoppingLists');
-      let lists = currentLists ? JSON.parse(currentLists) : [];
-      lists.push(product.name);
-      localStorage.setItem('shoppingLists', JSON.stringify(lists));
-      console.log(`Button clicked for product: ${product.name}`);
-    },
+    handleButtonClick(product: { type: string; name: string }, index: number) {
+    const currentLists = localStorage.getItem('shoppingLists');
+    let lists = currentLists ? JSON.parse(currentLists) : [];
+
+  if (!lists.includes(product.name)) {
+    lists.push(product.name);
+    localStorage.setItem('shoppingLists', JSON.stringify(lists));
+    this.addedIndices.push(index);
+
+    setTimeout(() => {
+      const idx = this.addedIndices.indexOf(index);
+      if (idx !== -1) {
+        this.addedIndices.splice(idx, 1);
+      }
+    }, 1000);
+  } else {
+    alert('This product is already in your shopping list.');
+  }
+},
+
+    getButtonImage(product: { type: string; name: string }) {
+
+      const index = this.filteredProducts.findIndex(item => item.name === product.name);
+      if (this.addedIndices.includes(index)) {
+
+        return "https://img.icons8.com/ios-glyphs/30/FFFFFF/checkmark--v1.png";
+      } else {
+
+        return "https://img.icons8.com/ios-glyphs/30/FFFFFF/add--v1.png";
+      }
+    }
   },
 });
 </script>

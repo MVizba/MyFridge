@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import HealthyFood from '@/components/HealthyFood.vue';
+import HealthyFood from '@/components/ListLogic/HealthyFood.vue';
 
 
 describe('HealthyFood', () => {
